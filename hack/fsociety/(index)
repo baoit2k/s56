@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>GEEKTyper.com - fsociety</title>
+
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google" content="notranslate" />
+<meta property="og:image" content="https://i.imgur.com/VqgatEs.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="113">
+<meta name="classification" content="Novelty">
+<meta property="og:title" content="GEEKtyper.com - fsociety">
+<meta property="og:url" content="http://geektyper.com/fsociety">
+
+<link id="pagestyle" rel="stylesheet" type="text/css" href="../ASSETS/style.css">
+<link rel="stylesheet" type="text/css" href="../ASSETS/windows.css">
+<link rel="stylesheet" type="text/css" href="mod.css">
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<link rel="stylesheet" type="text/css" href="http://bgrins.github.com/spectrum/spectrum.css">
+<script type='text/javascript' src="http://bgrins.github.com/spectrum/spectrum.js"></script>
+<meta name="viewport" content="width=320" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45751574-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+
+jQuery(window).load(function() {
+ showDraggable("#Audio");
+  document.getElementById('Numbers').style.display = "block";
+  $("#BigFolder").toggle();
+ 
+});
+</script>
+<script src='../ASSETS/jquery.mousewheel.min.js' type='text/javascript'></script> 
+<script src='../ASSETS/script.js' type='text/javascript'></script> 
+<script type='text/javascript'>
+getKernel = '../ASSETS/kernels/5.txt';
+Typer.file = (getKernel);
+Typer.init();
+</script>
+
+
+
+	
+<script type='text/javascript'>
+
+
+var dragContainer = $("body");
+var currentDragData = {
+    offset: {x:0, y:0},
+    target: null
+};
+
+$(document).ready(function(e) {
+    $(document).delegate(".dragme", "mousedown", function(e) {
+        if(!currentDragData.target) {
+            if($(e.currentTarget).hasClass("dragme") && !$(e.target).closest(".folder").length) {
+                currentDragData.target = $(e.currentTarget);
+                currentDragData.target.parent().append(currentDragData.target);
+                currentDragData.offset.x = e.pageX - currentDragData.target.offset().left;//e.offsetX;
+                currentDragData.offset.y = e.pageY - currentDragData.target.offset().top;//e.offsetY;
+            }
+        }
+    });
+	
+    $(document).delegate(".dragme #close", "mouseup", function(e) {
+		$(e.currentTarget).closest(".dragme").hide();
+
+    });
+	/*
+	$(document).delegate(".dragme .folder", "mouseup", function(e) {
+
+		currentDragData.target = null;
+
+	});*/
+	
+    $(document).delegate(".dragme", "mouseup", function(e) {
+        if(currentDragData.target) {
+            currentDragData.target = null;		
+        }	
+    });
+    
+    $(document).mousemove(function(e) {
+        if(currentDragData.target) {
+            e.preventDefault();
+            currentDragData.target.offset({
+                left: e.pageX - currentDragData.offset.x,
+                top: e.pageY - currentDragData.offset.y
+            });
+        }
+    });
+});
+
+function showDraggable(d) {
+	$(d).toggle();
+	$(d).parent().append($(d));
+}
+</script>
+
+
+</head>
+<body onload="startTime()">
+<img src="kde.png" style="left:0px;top:0px;width:100%;" />
+
+
+
+
+<div id='AccessGranted' class="dialog" style="display:none;"><h1>ACCESS GRANTED</h1></div>
+<div id='AccessDenied'  class="dialog" ondragstart='return false;' style="display:none;"><h1>ACCESS DENIED</h1></div>
+<div id='LevelRequired'  class="dialog" ondragstart='return false;' style="display:none;"><h1>SECURITY BREACH</h1><h2>LEVEL 3 ACCESS REQUIRED</h2></div>
+<div id='Downloading'  ondragstart='return false;' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Downloading...</h1>Critical Data<br><img src='../ASSETS/img/downloading.gif'></div>
+<div id='Rat'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/rat.gif'></div>
+<div id='Initializing'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Encrypting</h1><img src='http://i.imgur.com/PTHgj1N.gif'></div>
+<div id='Scan'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Satellite Uplink</h1>Interfacing via Stuttgard<img src='http://i.imgur.com/nhk5its.gif'></div>
+<div id='Map' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Tracing Contact</h1><img src='http://i.imgur.com/vOxo92o.gif'></div>
+<div id='Countdown' class="dragme" ondragstart='return false;' style="display:none;"><h1>Purge Facility</h1>Purging will commence in:<br><br><br><img src='../ASSETS/img/countdown.gif'><br><br></div>
+<div id='Password' class="dragme" ondragstart='return false;' style="display:none;"><h1>Purge Facility?</h1>Confirm password<br><img src='../ASSETS/img/password.gif'></div>
+<div id='Poke'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>PROJECT SIOP-62</h1>Nuclear Weapons Program<img src='http://i.imgur.com/Ec2Z2eb.gif'></div>
+<div id='Hash'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Password Decryptor</h1>Calculating Hashes<br><img src='../ASSETS/img/hash.gif'></div>
+<div id='Pony'  class="dragme" ondragstart='return false;' style="display:none;"><img src='http://i.imgur.com/yb7MK0i.gif'></div>
+<div id='SystemFailure'  class="dragme" ondragstart='return false;' style="display:none;"></div>
+<div id='ConnectionLost'  class="dragme" ondragstart='return false;' style="display:none;">Connection Lost<h2>Facility Offline</h2></div>
+<div id='Breach'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>SECURITY ALERT</h1>INTERIOR EXOGEN BREACH<img src='../ASSETS/img/breach.gif'></div>
+<div id='Evacuate'  class="dragme" ondragstart='return false;' style="display:none;"><img  style="background:none;" id="close" src="../ASSETS/img/close1.png"/><h1>FACILITY BREACHED</h1>CRITICAL EXOGEN BREACH<img src='../ASSETS/img/evacuate.gif'></div>
+<div id='Query'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/>Interpol database<img src='http://i.imgur.com/WZYdsTD.gif'></div>
+<div id='Console'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/>Compiling Nodes<br><br><img src='http://i.imgur.com/msmvE09.gif'></div>
+<div id='Deploy'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Activating HAWK</h1>Engage all enemy vehicles<img src='http://i.imgur.com/snY9WtD.gif'></div>
+<div id='Numbers'  ondragstart='return false;' style="display:none;"><img src='http://i.imgur.com/id2kyxB.gif'></div>
+<div id='Radar'  ondragstart='return false;' onclick='$("#Radar").toggle();' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/radar.gif'></div>
+<div id='Irc'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/irc.gif'></div>
+<div id='Tracing'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='http://i.imgur.com/NnVSoQT.gif'></div>
+<div id='Neurotoxin'  class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1>Flooding Facility</h1>Preparing Neurotoxin Emiters<br><br><img src='http://i.imgur.com/eHaZXmm.gif'></div>
+<div id='Audio' class="dragme" ondragstart='return false;' style="background:rgba(0,0,0,0.9);text-align:left;height:500px;display:none;"><img id="close" src="../ASSETS/img/close1.png"/>
+
+
+
+<div id='console'>
+<button id="button" title="Write code for me" onclick="var x = setInterval(function(){
+        Typer.addTextAuto(12);
+}, 30);">Automate</button>
+<br>
+<br>
+
+<img style="width:100px;height:100px;" src="ecrp.png" /><br>
+Central Mainframe <br/></br>Authorized-access only</br>Press F2 or TAB for help, or type to begin. 
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div id='Flash' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='http://i.imgur.com/Bua5h62.gif'></div>
+<div id='Sequence' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='http://i.imgur.com/LlseBPd.gif'></div>
+<div id='Pipe' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/pipe.gif'></div>
+<div id='Stability' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/stability.gif'></div>
+<div id='Random' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><img src='http://i.imgur.com/XJsjXT1.gif'></div>
+<div id='BigFolder'  class="dragme" ondragstart='return false;' style="display:none;background:rgba(0,30,60,0.8);">
+<img id="close" src="../ASSETS/img/close1.png"/>
+<div class="folder" onclick='showDraggable("#Downloading");'><p>DL Data</p></div>
+<div class="folder" onclick='showDraggable("#Hash");'><p>Hash</p></div>
+<div class="folder"  onclick='showDraggable("#Console");'><p>Terminal</p></div>
+<div class="folder"  onclick='showDraggable("#Initializing");'><p>Decryptor</p></div>
+<div class="folder"  onclick='showDraggable("#Map");'><p>Map</p></div>
+<div class="folder" onclick='showDraggable("#Scan");'><p>Scan 6</p></div>
+<div class="folder" onclick='showDraggable("#Query");'><p>Query Db</p></div>
+<div class="folder"  onclick='showDraggable("#Deploy");'><p>Deploy</p></div>
+<div class="folder"  onclick='showDraggable("#Irc");'><p>Chat</p></div>
+<div class="folder"  onclick='showDraggable("#Tracing");'><p>Trace</p></div>
+<div class="folder" onclick='showDraggable("#Neurotoxin");'><p>Neuro</p></div>
+<div class="folder" onclick='showDraggable("#Rat");'><p>Infect</p></div>
+<div class="folder"  onclick='showDraggable("#AccessDenied");document.getElementById("accessdenied").play();'><p>Root</p></div>
+<div class="folder"  onclick='showDraggable("#Poke");'><p>SIOP</p></div>
+<div class="folder"  onclick='showDraggable("#Sequence");'><p>Sequence</p></div>
+<div class="folder"  onclick='showDraggable("#Random");'><p>Random</p></div>
+<div class="folder"  onclick='showDraggable("#Stability");'><p>Stability</p></div>
+<div class="folder"  onclick='showDraggable("#Pipe");'><p>Pipe</p></div>
+<div class="folder"  onclick='showDraggable("#Audio");'><p>Audio</p></div>
+</div>
+
+
+<div id='Help'  class="dragme" ondragstart='return false;' style="display:none;">
+<img id="close" src="../ASSETS/img/close1.png"/><img src='../ASSETS/img/hints.png'>
+<hr />
+<p>Stats & Achievements</p>
+<div id="LetterCount"></div><br>
+<div id="getAchievement1" class="ac"></div>
+<div id="getAchievement2" class="ac"></div>
+<div id="getAchievement3" class="ac"></div>
+<div id="getAchievement4" class="ac"></div>
+<div id="getAchievement5" class="ac"></div>
+<div id="getAchievement6" class="ac"></div>
+<div id="getAchievement7" class="ac"></div>
+<div id="getAchievement8" class="ac"></div>
+<div id="getAchievement9" class="ac"></div>
+<div id="itemz" style="position:fixed; bottom:20px; right:20px; overflow:hidden;  background-color:#ccc; height:90px; z-index:17">
+	
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-3193838836354850";
+	/* omnimoads */
+	google_ad_slot = "2980063218";
+	google_ad_width = 728;
+	google_ad_height = 90;
+	//-->
+	</script>
+
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
+</div>
+
+
+<div id='CustomWindow' class="dragme" ondragstart='return false;' style="display:none;"><img id="close" src="../ASSETS/img/close1.png"/><h1 id="bigtitle"></h1><p id="smalltitle"></p><img id="customimage" src=''>
+<script>
+bigtitle = localStorage.getItem("bigtitle") || 'Click Edit to set the title';
+smalltitle = localStorage.getItem("smalltitle") || 'Click Edit to set the title';
+customimage = localStorage.getItem("customimage") || '../ASSETS/img/placeholder.png';
+document.getElementById("bigtitle").innerHTML = bigtitle;
+document.getElementById("smalltitle").innerHTML = smalltitle;
+document.getElementById("customimage").src = customimage;
+</script>
+</div>
+
+
+
+
+<script>
+
+
+
+</script>
+
+
+
+<!--
+	<div class="box" id="box">
+	<img id="icon" src="" />
+	<h1></h1>
+	<p id="achievementname"></p>
+	</div>
+
+	-->
+
+<div id="center">
+</div>
+<div id="dragme">
+
+</div>
+
+<div id="folders" style="left:30px;">
+<div class="folder" onclick='showDraggable("#Downloading");'><p>DL Data</p></div>
+<div class="folder"  onclick='showDraggable("#Console");'><p>Terminal</p></div>
+<div class="folder"  onclick='showDraggable("#Hash");'><p>Decryptor</p></div>
+<div class="folder" onclick='$("#Help").toggle();'><p>Help</p></div>
+<div class="folder"  onclick='$("#BigFolder").toggle();'><p>All Scripts</p></div>
+
+<div id="result2"></div>
+</div>
+
+
+
+
+<script src='../ASSETS/keyboard_other.js'></script>
+
+
+<audio loop id="caution">
+<source src="../ASSETS/voice/mi6/caution.mp3" type="audio/mp3" />
+</audio>
+
+<audio loop id="purge">
+<source src="../ASSETS/voice/mi6/purge.mp3" type="audio/mp3" />
+</audio>
+
+
+<div class="social_container" style="position:fixed; bottom:0px;right:20px;">
+   <ul class="socials">
+
+      <span class="facebook">
+         <a href="//www.facebook.com/sharer/sharer.php?u=http://www.geektyper.com" target="_blank"><img alt="facebook" src="https://i.imgur.com/vNOyGzt.jpg"></a>
+      </span>
+      <span class="twitter">
+         <a href="//twitter.com/intent/tweet?text=Check+Out+GeekTyper.com:&url=http://geektyper.com" target="_blank"><img alt="twitter" src="https://i.imgur.com/vbXtN58.jpg"></a>
+      </span>
+      
+   </ul>
+</div>
+
+</body>
+</html>
+
+<!--*(c) Copyright 2011 Simone Masiero. Some Rights Reserved. *This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 License-->

@@ -1,0 +1,14 @@
+body {background-image:url('bg.png');font-family:Fixedsys, Sans-Serif;background-size:cover;background-color:#1d1d1d;color:rgb(255,255,255);}
+#console {font-family:Fixedsys, Sans-Serif;}
+#center {background-image:url('../ASSETS/logos/fsociety.png');background-size: auto 300px;}
+.folder {background-color:rgb(255,255,255);}
+.dragme {border-color:rgb(255,255,255);color:rgb(255,255,255);}
+#button {background-color:rgb(50,140,178);color:rgb(255,255,255);}
+#button:hover {color:rgb(50,140,178);background-color:rgb(255,255,255);}
+
+
+#console {
+	display:flex;
+	overflow:hidden;
+	flex-direction:column-reverse;
+max-height:500px;}
